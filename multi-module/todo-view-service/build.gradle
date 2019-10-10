@@ -1,4 +1,17 @@
+
+task convert2Maven {
+    doLast {
+        file("$buildDir/poms/pom-default.xml").renameTo(file("$rootDir/pom.xml"))
+    }
+}
+
+
+apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
+
+apply plugin: 'maven'
+group = 'com.iotbull'
+version= 1.0
 
 dependencies {
     compile project (":common")

@@ -11,10 +11,24 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.0'
 }
 
+task convert2Maven {
+    doLast {
+        file("$buildDir/poms/pom-default.xml").renameTo(file("$rootDir/pom.xml"))
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+group = 'com.iotbull'
+version= 1.0
+
 subprojects {
 
     apply plugin: "java"
-
+	apply plugin: 'maven'
+	group = 'com.iotbull'
+	version= 1.0
     repositories {
         mavenCentral()
         jcenter()

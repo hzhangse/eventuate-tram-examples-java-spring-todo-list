@@ -1,3 +1,7 @@
+
+apply plugin: 'maven'
+group = 'com.iotbull'
+version= 1.0
 dependencies {
     testCompile "junit:junit:4.12"
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
